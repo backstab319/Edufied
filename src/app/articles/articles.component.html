@@ -1,0 +1,31 @@
+<mat-card *ngIf='articles.length == 0'>
+  <mat-card-header>
+    <mat-card-title>Articles</mat-card-title>
+    <mat-card-subtitle>Published articles will appear here</mat-card-subtitle>
+  </mat-card-header>
+</mat-card>
+
+<div *ngIf='articles.length > 0'>
+  <mat-card *ngFor='let i of articles; let j = index'>
+    <mat-card-header>
+      <mat-card-title>
+        {{ i.title }}
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{ i.description }}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-xl-image [src]='i.imgUrl'>
+    <mat-card-content>
+      Published on {{ i.date }}
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color='primary'
+      [routerLink]='["/update", j]'
+      >Update</button>
+      <button mat-raised-button color='primary'
+      (click)='deleteArticle(j)'
+      >Delete</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

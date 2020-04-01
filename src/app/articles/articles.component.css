@@ -1,0 +1,12 @@
+mat-card {
+  margin: 30px;
+  padding: 30px;
+}
+
+mat-card-content {
+  margin: 0px 16px;
+}
+
+mat-card-actions {
+  margin: 0px 16px;
+}
